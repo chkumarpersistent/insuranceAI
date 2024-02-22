@@ -1,0 +1,58 @@
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+                <button routerLink="/">Home</button>
+                <br />
+                <ng-container *ngFor="let imgSrc of uploadImages">
+                    <br/>
+                    <div class="fingerprint" [ngClass]="{'scanning': submmited}">
+                        <img [src]="imgSrc | sanitizeUrl" />
+                    </div>
+                </ng-container>
+                <br />
+                <ng-container *ngIf="content; else loading">
+                    <div class="card">
+                        <div class="card-body">
+                            <p [innerText]="content" class="mt-4"></p>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="!content && !submmited; else resetBtn">
+                    <div class="form-group">
+                        <label for="exampleTextarea" class="form-label mt-4"><b>Enter your message</b></label>
+                        <textarea class="form-control" id="exampleTextarea" rows="3" spellcheck="false"
+                            [(ngModel)]="prompt" (keyup.enter)="textInput()" (input)="clearContent()"
+                            placeholder="text your input"></textarea>
+                        <!-- <button type="submit" class="btn btn-primary mt-4" (click)="textInput()">Submit</button> -->
+                    </div>
+                    <form class="my-5">
+                        <input style="display: none" type="file" name="images" (change)="onFileChanged($event)" #fileInput multiple="multiple" accept="image/png, image/gif, image/jpeg">
+                        <!-- <input type="file" accept="image/*;capture=camera" style="display: none" (change)="onFileChanged($event)" #fileInput multiple="multiple"> -->
+                        <div class="text-center" style="max-width: 300px; margin: 0 auto;">
+                            <div>
+                                <button type="button" class="btn btn-primary w-100" (click)="fileInput.click()">Upload
+                                    Picture</button>
+                            </div>
+                            <div class="mt-3">
+                                <button type="button" class="btn btn-success w-100" (click)="ImageWithText()">Get the
+                                    Results</button>
+                            </div>
+                        </div>
+                    </form>
+                </ng-container>
+                <ng-template #resetBtn>
+                    <br />
+                    <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+                </ng-template>
+                <ng-template #loading>
+                    <div *ngIf="submmited && uploadImages.length === 0" class="loading">
+                        <img src="../../assets/dataloading.gif" alt="dataloading"/>
+                        <h4>wait a second. searching for information...</h4>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>

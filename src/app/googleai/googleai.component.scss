@@ -1,0 +1,44 @@
+.loading {
+    img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+.fingerprint {
+    position: relative;
+    border: solid 3px #AAB8BE;
+    width: 100%;
+    max-width: 900px;
+
+    img {
+        width: 100%;
+        max-width: 900px;
+        max-height: 600px;
+        object-fit: contain;
+        height: 100%;
+    }
+}
+
+.fingerprint.scanning::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-width: 900px;
+    height: 30px;
+    background-image: linear-gradient(to bottom, rgba(170, 184, 190, 0), rgba(0, 150, 136, .5));
+    animation: scanning 2.5s linear infinite alternate;
+    z-index: 9999;
+}
+
+@keyframes scanning {
+
+    0%,
+    100% {
+        height: 18px;
+    }
+
+    50% {
+        height: calc(100% - 0px);
+    }
+}
