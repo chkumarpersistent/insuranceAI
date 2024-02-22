@@ -11,6 +11,7 @@ export class GoogleaiComponent implements OnInit {
   public prompt: string = '';
   public content: string | null = null;
   public submmited: boolean = false;
+  public active = 1;
   //How to replay to client for this insurance policy
   public ngOnInit() {
   }
@@ -18,7 +19,7 @@ export class GoogleaiComponent implements OnInit {
     this.content = null;
   }
   public async textInput() {
-    console.log('TEXT ONLY')  
+    console.log('TEXT ONLY')
     this.submmited = true;
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
@@ -51,10 +52,11 @@ export class GoogleaiComponent implements OnInit {
       return
     }
     if (Array.from(this.selectedFiles).length === 0) {
-      this.textInput();
+      alert('Upload Picture')
+      // this.textInput();
       return
     }   
-    console.log('TEXT - IMAGE')  
+    console.log('TEXT - IMAGE')
     this.submmited = true;
     // For text-and-images input (multimodal), use the gemini-pro-vision model
     const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
