@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production --base-href https://chkumarpersistent.github.io/insuranceAI/",
+    "build": "ng build --output-path docs --base-href https://chkumarpersistent.github.io/insuranceAI/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
