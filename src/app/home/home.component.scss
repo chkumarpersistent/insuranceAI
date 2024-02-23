@@ -1,247 +1,270 @@
- .bg-overlay {
-   background: linear-gradient(to right, #512da8, #711e72);
-   opacity: 0.9;
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   top: 0;
+.bg-overlay {
+  background: linear-gradient(to right, #512da8, #711e72);
+  opacity: 0.9;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
 
- }
+//
+// home.scss
+//
+$white: #fff;
 
- //
- // home.scss
- //
- $white: #fff;
+.bg-home {
+  //  background: url("https://dorsin.angular.themesbrand.com/assets/images/bg-home.jpg");
+  background: url("https://chkumarpersistent.github.io/insuranceAI/assets/home-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 300px);
 
- .bg-home {
-   //  background: url("https://dorsin.angular.themesbrand.com/assets/images/bg-home.jpg");
-   background: url("https://chkumarpersistent.github.io/insuranceAI/assets/home-bg.jpg");
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
- }
+  @media screen and (max-width: 600px) {
+    height: calc(100vh - 100px);
+  }
+}
 
- .home-title {
-   font-size: 46px;
-   line-height: 64px;
-   color: #fff;
- }
+.home-title {
+  font-size: 46px;
+  line-height: 64px;
+  color: #fff;
 
- .display-table-cell {
-   display: table-cell;
-   vertical-align: middle;
- }
+  @media screen and (max-width: 600px) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
 
- .display-table {
-   position: relative;
-   display: table;
-   width: 100%;
-   height: 100%;
- }
+.display-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
 
+.display-table {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
 
- .home-desc {
-   color: rgba($white, 0.7);
-   font-size: 15px;
-   max-width: 600px;
-   margin: 0 auto;
- }
+.home-desc {
+  color: rgba($white, 0.7);
+  font-size: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
- .bg-pattern-effect {
-   svg {
-     path {
-       fill: var(--bs-body-bg);
-     }
-   }
- }
-
- .bg-pattern-light {
-   svg {
-     path {
-       fill: var(--bs-secondary-bg);
-     }
-   }
- }
-
- /* ------------- Demo 1 bg-pattern ------------- */
-
- .home-half {
-   padding-bottom: 150px;
-   padding-top: 220px;
- }
-
- .bg-pattern-effect {
-   position: absolute;
-   bottom: -11px;
-   left: 0px;
-   right: 0px;
-
-   img {
-     max-width: 100%;
-   }
-
-   @media (min-width: 200px) and (max-width: 1024px) {
-     bottom: -18px;
-   }
- }
-
- .home-modal {
-   border: 0;
-   background-color: transparent;
-
-   .btn-close {
-     width: 36px;
-     height: 36px;
-     background-color: rgba($white, 0.5);
-     border-radius: 10px;
-     position: relative;
-     top: 70px;
-     z-index: 3;
-
-     &:hover,
-     &:focus {
-       opacity: 0.5;
-     }
-   }
-
-   video {
-     &:focus {
-       outline: none;
-     }
-   }
- }
-
- .video-box {
-   width: 100%;
- }
-
- /* ------- Demo 2 wave animation --------- */
-
- .wave-effect {
-   position: absolute;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   margin: auto;
-   height: 105px;
-   overflow: hidden;
- }
-
- .shape-one {
-   z-index: 15;
-   opacity: 0.5;
- }
-
- .shape-two {
-   z-index: 10;
-   opacity: 0.75;
- }
-
- .shape-three {
-   z-index: 5;
- }
-
- .wave {
-   position: absolute;
-   left: 0;
-   width: 200%;
-   height: 100%;
-   background-repeat: repeat no-repeat;
-   background-position: 0 bottom;
-   transform-origin: center bottom;
- }
-
- .waves-shape {
-   position: absolute;
-   bottom: -1px;
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
- }
-
- .wave-one {
-   background-size: 50% 100px;
- }
-
- .wave-anim .wave-one {
-   animation: move-wave 3s;
-   -webkit-animation: move-wave 3s;
-   -webkit-animation-delay: 1s;
-   animation-delay: 1s;
- }
-
- .wave-two {
-   background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave2.png");
-   background-size: 50% 100px;
- }
-
- .wave-anim .wave-two {
-   animation: move_wave 10s linear infinite;
- }
-
- .wave-three {
-   background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave3.png");
-   background-size: 50% 100px;
- }
-
- .wave-anim .wave-three {
-   animation: move_wave 15s linear infinite;
- }
-
- @keyframes move_wave {
-   0% {
-     transform: translateX(0) translateZ(0) scaleY(1);
-   }
-
-   50% {
-     transform: translateX(-25%) translateZ(0) scaleY(0.55);
-   }
-
-   100% {
-     transform: translateX(-50%) translateZ(0) scaleY(1);
-   }
- }
-
- [data-bs-theme="dark"] {
-   .shape-one {
-     opacity: 0.5;
-     z-index: 5;
-   }
-
-   .shape-two {
-     opacity: 0.6;
-     z-index: 10;
-   }
-
-   .shape-three {
-     opacity: 1;
-     z-index: 15;
-   }
-
-   .wave-one {
-     path {
-       fill: #141c26;
-       stroke: #141c26;
-     }
-   }
-
-   .wave-two {
-     background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave-dark2.png");
-   }
-
-   .wave-three {
-     background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave-dark3.png");
-   }
- }
- 
- .my_buttons {
-  .btn {
-    height: 100px;
-    @media (min-width: 200px) and (max-width: 1024px) {
-      height: 50px;
+.bg-pattern-effect {
+  svg {
+    path {
+      fill: var(--bs-body-bg);
     }
   }
- }
+}
+
+.bg-pattern-light {
+  svg {
+    path {
+      fill: var(--bs-secondary-bg);
+    }
+  }
+}
+
+/* ------------- Demo 1 bg-pattern ------------- */
+.home-half {
+  padding-bottom: 150px;
+  padding-top: 220px;
+}
+
+.bg-pattern-effect {
+  position: absolute;
+  bottom: -11px;
+  left: 0px;
+  right: 0px;
+
+  img {
+    max-width: 100%;
+  }
+
+  @media (min-width: 200px) and (max-width: 1024px) {
+    bottom: -18px;
+  }
+}
+
+.home-modal {
+  border: 0;
+  background-color: transparent;
+
+  .btn-close {
+    width: 36px;
+    height: 36px;
+    background-color: rgba($white, 0.5);
+    border-radius: 10px;
+    position: relative;
+    top: 70px;
+    z-index: 3;
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+
+  video {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.video-box {
+  width: 100%;
+}
+
+/* ------- Demo 2 wave animation --------- */
+.wave-effect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 105px;
+  overflow: hidden;
+}
+
+.shape-one {
+  z-index: 15;
+  opacity: 0.5;
+}
+
+.shape-two {
+  z-index: 10;
+  opacity: 0.75;
+}
+
+.shape-three {
+  z-index: 5;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.waves-shape {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wave-one {
+  background-size: 50% 100px;
+}
+
+.wave-anim .wave-one {
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.wave-two {
+  background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave2.png");
+  background-size: 50% 100px;
+}
+
+.wave-anim .wave-two {
+  animation: move_wave 10s linear infinite;
+}
+
+.wave-three {
+  background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave3.png");
+  background-size: 50% 100px;
+}
+
+.wave-anim .wave-three {
+  animation: move_wave 15s linear infinite;
+}
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+[data-bs-theme="dark"] {
+  .shape-one {
+    opacity: 0.5;
+    z-index: 5;
+  }
+
+  .shape-two {
+    opacity: 0.6;
+    z-index: 10;
+  }
+
+  .shape-three {
+    opacity: 1;
+    z-index: 15;
+  }
+
+  .wave-one {
+    path {
+      fill: #141c26;
+      stroke: #141c26;
+    }
+  }
+
+  .wave-two {
+    background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave-dark2.png");
+  }
+
+  .wave-three {
+    background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave-dark3.png");
+  }
+}
+
+.my_buttons {
+  .btn {
+    height: 100px;
+    border-color: #FF7E58;
+
+    span {
+      display: block;
+      font-weight: bold;
+      font-size: 1.8rem;
+
+      @media screen and (max-width: 600px) {
+        font-size: 1.2rem;
+      }
+    }
+
+    small {
+      line-height: 1.8;
+    }
+
+    @media (min-width: 200px) and (max-width: 1024px) {
+      height: 75px;
+      max-width: 300px;
+    }
+  }
+}
