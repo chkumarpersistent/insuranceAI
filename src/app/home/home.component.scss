@@ -240,5 +240,8 @@
  .my_buttons {
   .btn {
     height: 100px;
+    @media (min-width: 200px) and (max-width: 1024px) {
+      height: 50px;
+    }
   }
  }

@@ -1,13 +1,14 @@
 $dark: rgb(39, 42, 51);
- 
+
 
 #navbar {
     .logo {
         img {
             max-width: 250px;
             width: 100%;
+
             @media screen and (max-width: 600px) {
-                max-width: 175px;
+                max-width: 120px;
             }
         }
     }
@@ -40,6 +41,7 @@ $dark: rgb(39, 42, 51);
                 display: inline-block;
             }
         }
+
         .navbar-btn {
             padding: 10px 20px;
             font-size: 14px;
@@ -47,8 +49,12 @@ $dark: rgb(39, 42, 51);
             transition: all 0.5s;
             border-radius: 30px;
             background-color: #1bbc9d !important;
+
+            @media (min-width: 200px) and (max-width: 1024px) {
+                padding: 10px;
+            }
         }
     }
 
-   
+
 }
