@@ -18,7 +18,7 @@
 
  .bg-home {
    //  background: url("https://dorsin.angular.themesbrand.com/assets/images/bg-home.jpg");
-   background: url("/assets/home-bg.jpg");
+   background: url("https://chkumarpersistent.github.io/insuranceAI/assets/home-bg.jpg");
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
@@ -81,6 +81,10 @@
 
    img {
      max-width: 100%;
+   }
+
+   @media (min-width: 200px) and (max-width: 1024px) {
+     bottom: -18px;
    }
  }
 
@@ -170,7 +174,7 @@
  }
 
  .wave-two {
-   background-image: url("https://dorsin.angular.themesbrand.com/assets/images/wave-shape/wave2.png");
+   background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave2.png");
    background-size: 50% 100px;
  }
 
@@ -179,7 +183,7 @@
  }
 
  .wave-three {
-   background-image: url("https://dorsin.angular.themesbrand.com/assets/images/wave-shape/wave3.png");
+   background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave3.png");
    background-size: 50% 100px;
  }
 
@@ -225,94 +229,16 @@
    }
 
    .wave-two {
-     background-image: url("https://dorsin.angular.themesbrand.com/assets/images/wave-shape/wave-dark2.png");
+     background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave-dark2.png");
    }
 
    .wave-three {
-     background-image: url("https://dorsin.angular.themesbrand.com/assets/images/wave-shape/wave-dark3.png");
+     background-image: url("https://chkumarpersistent.github.io/insuranceAI/assets/wave-dark3.png");
    }
  }
-
- /*-------Demo 3 Rgistartion form ------*/
-
- .home-registration {
-   padding-top: 190px;
- }
-
- .home-registration-form .form-heading {
-   margin-bottom: 25px;
- }
-
- .home-registration-form {
-   padding: 15px 32px 32px 32px;
-   border-radius: 3px;
-   box-shadow: 0px 0px 3px 0px #000000;
- }
-
- .home-subtitle-width-100 {
-   max-width: 100%;
- }
-
- .small-text {
-   font-size: 14px;
- }
-
- /*----Demo 4 Dashboard image ----*/
-
- .home-cell-bottom {
-   display: table-cell;
-   vertical-align: bottom;
- }
-
- .home-padding-t-150 {
-   padding-top: 150px;
- }
-
- /*---Demo 6 Subscribe -----*/
-
- .subscribe-form input {
-   padding: 15px 20px;
-   width: 100%;
-   font-size: 17px;
-   border: none;
-   outline: none !important;
-   padding-right: 180px;
-   padding-left: 30px;
-   background-color: var(--bs-body-bg);
-   border-radius: 30px;
- }
-
- .subscribe-form button {
-   position: absolute;
-   text-transform: uppercase;
-   top: 6px;
-   right: 8px;
-   outline: none !important;
-   border-radius: 30px;
-   font-size: 16px;
-   padding: 9px 30px;
- }
-
- .subscribe-form form {
-   position: relative;
-   max-width: 600px;
-   margin: 0px auto;
- }
-
- /*----Demo 8 Home with video --------*/
-
- .frame-border {
-   border: 9px solid rgba(0, 0, 0, 0.3);
-   border-radius: 5px 5px 5px 5px;
- }
-
- /*---Demo 9 Animated ---*/
-
- .slidero {
-   top: 50%;
-   transform: translateY(-50%);
-   position: absolute;
-   z-index: 100;
-   left: 0;
-   right: 0;
+ 
+ .my_buttons {
+  .btn {
+    height: 100px;
+  }
  }

@@ -28,6 +28,11 @@ $font-family-sans-serif : $default-font;
 .text-muted {
   color: #95a0ab !important;
 }
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
 .section-title {
     text-transform: uppercase;
     letter-spacing: 2px;

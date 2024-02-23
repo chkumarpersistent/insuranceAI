@@ -5,6 +5,10 @@ $dark: rgb(39, 42, 51);
     .logo {
         img {
             max-width: 250px;
+            width: 100%;
+            @media screen and (max-width: 600px) {
+                max-width: 175px;
+            }
         }
     }
 
