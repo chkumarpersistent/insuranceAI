@@ -21,11 +21,7 @@ $white: #fff;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: calc(100vh - 300px);
-
-  @media screen and (max-width: 600px) {
-    height: calc(100vh - 100px);
-  }
+  height: calc(100vh - 50px);
 }
 
 .home-title {
