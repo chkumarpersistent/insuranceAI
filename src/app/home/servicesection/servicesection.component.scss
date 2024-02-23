@@ -1,0 +1,25 @@
+#services {
+    .boxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        ;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+
+            .card-body {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    $size: 100px;
+                    width: $size;
+                    height: $size;
+                }
+            }
+        }
+    }
+}

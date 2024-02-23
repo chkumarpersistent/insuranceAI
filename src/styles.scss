@@ -1,4 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
+$primary: #512da8;
+$success: #2e9132;
+$info: #2196f3;
+$font-size-base: .875rem;
+$default-font: 'Poppins', sans-serif;
+$font-family-sans-serif : $default-font;
 @import 'bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #a9a9a9;
+        outline: #708090 solid 1px;
+    }
+}
+.text-muted {
+  color: #95a0ab !important;
+}
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+    padding-bottom: 1rem;
+    line-height: 1;
+    font-size: 1.75rem;
+    font-weight: 500;
+  }
+  
+  .section-title-border {
+    width: 50px;
+    height: 2px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: $primary;
+  }
+  
+  .section-subtitle {
+    letter-spacing: 0.02em;
+  }
+  
+  .svg-pattern {
+    width: 100%;
+    position: relative;
+  }

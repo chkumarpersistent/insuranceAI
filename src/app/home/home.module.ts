@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ServicesectionComponent } from './servicesection/servicesection.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,7 +12,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ServicesectionComponent
   ],
   
   imports: [
