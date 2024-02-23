@@ -1,4 +1,12 @@
 #services {
+    background-color: #f7f5ff;
+    background: url(https://static.pbcdn.in/cdn/images/home-v1/left-bg.png) left top no-repeat, url(https://static.pbcdn.in/cdn/images/home-v1/right-bg.png) right top no-repeat;
+    min-height: 510px;
+
+    @media screen and (max-width: 600px) {
+        background: none;
+    }
+
     .boxes {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -12,19 +20,27 @@
 
         li {
             list-style: none;
+            box-shadow: 0 4px 20px #2538581a;
+            border-radius: 15px;
 
-            .card-body {
-                display: flex;
-                align-items: center;
+            .card {
+                border: none;
+                border-radius: 15px;
 
-                svg {
-                    $size: 100px;
-                    width: $size;
-                    height: $size;
-                    @media screen and (max-width: 600px) {
-                        $size: 75px;
+                .card-body {
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        $size: 100px;
                         width: $size;
                         height: $size;
+
+                        @media screen and (max-width: 600px) {
+                            $size: 75px;
+                            width: $size;
+                            height: $size;
+                        }
                     }
                 }
             }
