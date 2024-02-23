@@ -20,16 +20,25 @@ export class GoogleaiComponent implements OnInit {
   }
   public async textInput() {
     console.log('TEXT ONLY')
+    if (this.prompt.length === 0) {
+      alert('Hey! What you want to know, Type your message')
+      return
+    }
     this.submmited = true;
     // For text-only input, use the gemini-pro model
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const result = await model.generateContent(this.prompt);
-    const response = await result.response;
-    const text = response.text();
-    console.log(text);
-    this.content = text;
-    this.prompt = '';
-    this.submmited = false;
+    try {
+      const result = await model.generateContent(this.prompt);
+      const response = await result.response;
+      const text = response.text();
+      console.log(text);
+      this.content = text;
+      this.prompt = '';
+      this.submmited = false;
+    } catch (error) {
+      this.submmited = false;
+      alert('Something went wrong, Try again')
+    }
   }
   private selectedFiles: any = [];
   public uploadImages: any = [];
@@ -48,14 +57,14 @@ export class GoogleaiComponent implements OnInit {
   }
   public async ImageWithText() {
     if (this.prompt.length === 0) {
-      alert('Type your prompt')
+      alert('Hey! What you want to know about this Picture')
       return
     }
     if (Array.from(this.selectedFiles).length === 0) {
-      alert('Upload Picture')
+      alert('Upload Picture!')
       // this.textInput();
       return
-    }   
+    }
     console.log('TEXT - IMAGE')
     this.submmited = true;
     // For text-and-images input (multimodal), use the gemini-pro-vision model
@@ -68,13 +77,19 @@ export class GoogleaiComponent implements OnInit {
     const imageParts: any = await Promise.all(
       Array.from(this.selectedFiles).map(this.fileToGenerativePart)
     );
-    const result = await model.generateContent([this.prompt, ...imageParts]);
-    const response = await result.response;
-    const text = response.text();
-    console.log(text);
-    this.content = text;
-    this.submmited = false;
-    this.prompt = '';
+    try {
+      const result = await model.generateContent([this.prompt, ...imageParts]);
+      const response = await result.response;
+      const text = response.text();
+      console.log(text);
+      this.content = text;
+      this.submmited = false;
+      this.prompt = '';
+    } catch (error) {
+      this.submmited = false;
+      alert('Something went wrong, Try again')
+    }
+
   }
   // Converts a File object to a GoogleGenerativeAI.Part object.
   private async fileToGenerativePart(file: any) {
