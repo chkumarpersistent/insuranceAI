@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<app-header />
+<div class="main">
+    <router-outlet  (scroll)="scrollHandler($event)"/>
+</div>
+<app-footer/>

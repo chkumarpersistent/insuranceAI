@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-path docs --base-href https://chkumarpersistent.github.io/insuranceAI/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -22,7 +22,9 @@
     "@ng-bootstrap/ng-bootstrap": "^15.1.2",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "ngx-slider-v2": "^16.0.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.10.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
