@@ -87,7 +87,10 @@
                 </div>
                 <div class="col-12 col-lg-6">
                   <div class="row justify-content-xl-end">
-                    <div class="col-12 col-xl-11">
+                    <div class="col-12 col-xl-11" [ngClass]="{'d-none': !submmited}">
+                      <div class="text-line" *ngFor="let x of [].constructor(8)"></div>
+                    </div>
+                    <div class="col-12 col-xl-11" [ngClass]="{'d-none': submmited}">
                       <div class="d-flex mb-4">
                         <div>
                           <span class="btn btn-primary bsb-btn-circle pe-none me-4">1</span>
