@@ -37,6 +37,7 @@ export class HomeComponent {
         this.files = [];
         this.selectedFiles = [];
         this.popuptype = key;
+        this.resetQus();
         switch (key) {
             case 'claim':
                 this.CF.OpenPopup(this.claimpopup, 'My_Popup')
@@ -64,6 +65,9 @@ export class HomeComponent {
         this.response = null;
         this.files = this.files.filter(x => x !== file);
         this.showQues = this.files.length !== 0;
+       this.resetQus();
+    }
+    private resetQus(){
         const qus = this.commonquestions;
         this.commonquestions = [];
         setTimeout(() => this.commonquestions = qus, 100);

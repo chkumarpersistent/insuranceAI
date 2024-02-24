@@ -305,7 +305,7 @@ $border-radius: 2px;
   position: absolute;
   left: 0;
   width: 100%;
-  max-width: 900px;
+  // max-width: 900px;
   height: 30px;
   background-image: linear-gradient(to bottom, rgba(170, 184, 190, 0), rgba(0, 150, 136, .5));
   animation: scanning 2.5s linear infinite alternate;
