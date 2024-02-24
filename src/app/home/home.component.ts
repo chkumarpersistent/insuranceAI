@@ -4,6 +4,11 @@ import { FileHandle } from "./dragDrop.directive";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 const API_KEY = 'AIzaSyBEip1TZnfHNbMXlImJ1jr7ZV136BhcKII';
 const genAI = new GoogleGenerativeAI(API_KEY);
+const rawcommonquestions = [
+    { "question": "What's My Sum insured ?", "answer": null, animate: false },
+    { "question": "List All My Benefits of my Policy ?", "answer": null, animate: false },
+    { "question": "List all the nearest Hospitals in the network ?", "answer": null, animate: false }
+];
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -19,11 +24,8 @@ export class HomeComponent {
     public finalsubmmited: boolean = false;
     public extractText = 'extract information and Summary about the picture as summary and return with "Hospital Name" "Patient Name" "Doctor Name", "Summary" and "Network Hospital" in JSON format from above image';
     private popuptype: string = '';
-    public commonquestions = [
-        { "question": "What's My Sum insured ?", "answer": null, animate: false },
-        { "question": "List All My Benefits of my Policy ?", "answer": null, animate: false },
-        { "question": "List all the nearest Hospitals in the network ?", "answer": null, animate: false }
-    ]
+
+    public commonquestions: any = [];
     public showQues: boolean = false;
     public typedQuestion: string = '';
     public typedAnswer: string = '';
@@ -43,7 +45,9 @@ export class HomeComponent {
                 this.CF.OpenPopup(this.claimpopup, 'My_Popup')
                 break;
             default:
-                this.CF.OpenPopup(this.policypopup, 'My_Popup')
+                this.showQuestions();
+                this.CF.OpenPopup(this.policypopup, 'My_Popup');
+                this.resetQus();
                 break;
         }
     }
@@ -59,18 +63,16 @@ export class HomeComponent {
         this.showQuestions();
     }
     private showQuestions() {
-        this.showQues = (this.popuptype === 'policy')
+        this.showQues = (this.popuptype === 'policy' && this.files.length > 0);
     }
     public delete(file: any) {
         this.response = null;
         this.files = this.files.filter(x => x !== file);
         this.showQues = this.files.length !== 0;
-       this.resetQus();
+        this.resetQus();
     }
-    private resetQus(){
-        const qus = this.commonquestions;
-        this.commonquestions = [];
-        setTimeout(() => this.commonquestions = qus, 100);
+    private resetQus() {
+        this.commonquestions = JSON.parse(JSON.stringify(rawcommonquestions));
     }
     public upload(txt: string, data?: any): void {
         this.submmited = true;
