@@ -140,7 +140,9 @@
         </ng-container>
         <ng-template #step2>
             <form autocomplete="off">
-                <h3 class="mb-2">Your estimate:</h3>
+                <h3 class="mb-2">
+                    <span (click)="step1 = true" class="backbtn">&#x2190; </span>
+                     Your estimate:</h3>
                 <h1 class="mb-4">
                     <b>{{((value * 750 / 1) * selectedTenure ) | currency: 'INR':'symbol':'1.0-0'}}<span class="fw-light">/mo</span></b>
                 </h1>

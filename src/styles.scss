@@ -125,7 +125,7 @@ $border-radius: 2px;
       justify-content: center;
       padding: 15px;
       cursor: pointer;
-      
+
 
       span {
         opacity: 1;
@@ -140,6 +140,13 @@ $border-radius: 2px;
         }
       }
     }
+  }
+
+  .backbtn {
+    position: relative;
+    top: -3px;
+    margin-right: 5px;
+    cursor: pointer;
   }
 
   .notes {
