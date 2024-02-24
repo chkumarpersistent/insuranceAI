@@ -1,165 +1,184 @@
 <section id="home" class="section bg-home">
-    <div class="bg-overlay"></div>
-    <div class="display-table">
-        <div class="display-table-cell">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2 text-white text-center">
-                        <h1 class="home-title mt-5 mt-sm-0">Submit Your Claims with Ease</h1>
-                        <p class="padding-t-15 home-desc">Experience a seamless and secure way to submit your claims
-                            with ease</p>
-                        <div class="row my_buttons my-5">
-                            <div class="col-lg-6">
-                                <button type="button" (click)="openmodal('claim')"
-                                    class="btn btn-lg btn-primary text-white w-100 my-3 text-uppercase text-start">
-                                    <div class="ps-0 ps-md-3">
-                                        <small>Upload</small>
-                                        <span>claim Form</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="col-lg-6">
-                                <button type="button" (click)="openmodal('policy')"
-                                    class="btn btn-lg btn-primary text-white w-100 my-3 text-uppercase text-start">
-                                    <div class="ps-0 ps-md-3">
-                                        <small>Upload</small>
-                                        <span>Policy Document</span>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="bg-overlay"></div>
+  <div class="display-table">
+    <div class="display-table-cell">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2 text-white text-center">
+            <h1 class="home-title mt-5 mt-sm-0">Submit Your Claims with Ease</h1>
+            <p class="padding-t-15 home-desc">Experience a seamless and secure way to submit your claims
+              with ease</p>
+            <div class="row my_buttons my-5">
+              <div class="col-lg-6">
+                <button type="button" (click)="openmodal('claim')"
+                  class="btn btn-lg btn-primary text-white w-100 my-3 text-uppercase text-start">
+                  <div class="ps-0 ps-md-3">
+                    <small>Upload</small>
+                    <span>claim Form</span>
+                  </div>
+                </button>
+              </div>
+              <div class="col-lg-6">
+                <button type="button" (click)="openmodal('policy')"
+                  class="btn btn-lg btn-primary text-white w-100 my-3 text-uppercase text-start">
+                  <div class="ps-0 ps-md-3">
+                    <small>Upload</small>
+                    <span>Policy Document</span>
+                  </div>
+                </button>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="bg-pattern-effect">
-        <svg width="100%" height="43" viewBox="0 0 2002 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M0 9.49999V42L1998.5 40V23H1962L1879 33L1758.5 36L1703 29.5L1304.5 21.5C1285.3 15.5 1183.83 24 1135.5 29L636 35.5C455.2 1.89999 136.667 4.16665 0 9.49999Z"
-                fill="white" fill-opacity="0.1"></path>
-            <path opacity="0.1"
-                d="M0 33.5V41.5L1997.5 42V27H1972.5C1585.3 -21.8 1403.17 6.66666 1360.5 27C1299.7 13.4 1035.17 6 910.5 4C856.1 -6.8 597.5 8.5 475 17.5L0 33.5Z"
-                fill="white"></path>
-            <path
-                d="M0 31.6689V42.1689L2001.5 41.6689V11.6689L1942.25 18.3143C1910.49 21.8758 1879.21 29.7147 1847.38 32.5593C1799.52 36.8366 1750.41 29.3968 1727 23.6689C1577.8 -8.33114 1367.17 10.3355 1280.5 23.6689C1199.3 40.8689 1126.17 30.8355 1106 23.6689C1023.13 -2.89279 818.252 7.7814 689.669 19.2529C659.224 21.9691 629.271 29.2178 598.77 31.21C559.856 33.7516 520.953 28.0794 502 23.6689C395.2 -8.73115 122.833 15.1689 0 31.6689Z"
-                fill="white"></path>
-        </svg>
-    </div>
+  </div>
+  <div class="bg-pattern-effect">
+    <svg width="100%" height="43" viewBox="0 0 2002 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0 9.49999V42L1998.5 40V23H1962L1879 33L1758.5 36L1703 29.5L1304.5 21.5C1285.3 15.5 1183.83 24 1135.5 29L636 35.5C455.2 1.89999 136.667 4.16665 0 9.49999Z"
+        fill="white" fill-opacity="0.1"></path>
+      <path opacity="0.1"
+        d="M0 33.5V41.5L1997.5 42V27H1972.5C1585.3 -21.8 1403.17 6.66666 1360.5 27C1299.7 13.4 1035.17 6 910.5 4C856.1 -6.8 597.5 8.5 475 17.5L0 33.5Z"
+        fill="white"></path>
+      <path
+        d="M0 31.6689V42.1689L2001.5 41.6689V11.6689L1942.25 18.3143C1910.49 21.8758 1879.21 29.7147 1847.38 32.5593C1799.52 36.8366 1750.41 29.3968 1727 23.6689C1577.8 -8.33114 1367.17 10.3355 1280.5 23.6689C1199.3 40.8689 1126.17 30.8355 1106 23.6689C1023.13 -2.89279 818.252 7.7814 689.669 19.2529C659.224 21.9691 629.271 29.2178 598.77 31.21C559.856 33.7516 520.953 28.0794 502 23.6689C395.2 -8.73115 122.833 15.1689 0 31.6689Z"
+        fill="white"></path>
+    </svg>
+  </div>
 </section>
 <app-servicesection />
 <ng-template #uploadpopup let-c="close()" let-d="dismiss()">
-    <div class="modal-header justify-content-center border-0">
-        <button type="button" class="close" (click)='c; d;'></button>
-    </div>
-    <div class="modal-body">
-        <section class="pb-5">
-            <div class="container-fluid">
-                <div class="row" *ngIf="!files.length">
-                    <div class="col-lg-8 offset-lg-2">
-                        <h1 class="section-title text-center">Work Process</h1>
-                        <div class="section-title-border mt-3"></div>
-                        <p 
-                            class="section-subtitle text-muted text-center font-secondary py-4">In an ideal world this
-                            website wouldn't exist, a client would acknowledge the importance of having web copy before
-                            the Proin vitae ipsum vel ex finibus semper design starts.</p>
-                    </div>
+  <div class="modal-header justify-content-center border-0">
+    <button type="button" class="close" (click)='c; d;'></button>
+  </div>
+  <div class="modal-body">
+    <section class="pb-5">
+      <div class="container-fluid">
+        <div class="row" *ngIf="!files.length">
+          <div class="col-lg-8 offset-lg-2">
+            <h1 class="section-title text-center">Work Process</h1>
+            <div class="section-title-border mt-3"></div>
+            <p class="section-subtitle text-muted text-center font-secondary py-4">In an ideal world this
+              website wouldn't exist, a client would acknowledge the importance of having web copy before
+              the Proin vitae ipsum vel ex finibus semper design starts.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <fieldset class="upload_dropZone text-center mb-3 p-4" *ngIf="!files.length" appDrag
+              (files)="filesDropped($event)">
+              <legend class="visually-hidden">Image uploader</legend>
+              <svg width="80px" height="80px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M77.312 286.208h503.808v559.104H77.312z" fill="#5FFFBA" />
+                <path d="M133.632 342.016h391.68v335.36H133.632z" fill="#FFFFFF" />
+                <path d="M189.44 621.568h93.184L236.032 537.6zM375.808 453.632l-93.184 167.936h186.88z"
+                  fill="#FFD561" />
+                <path
+                  d="M637.44 621.568v83.456l337.408-165.376-211.456-432.64-252.928 122.88h110.08l120.32-58.368 127.488 259.584-230.912 113.152z"
+                  fill="#5FFFBA" />
+              </svg>
+              <p class="small my-2">Drag &amp; Drop background image(s) inside dashed region<br><i>or</i></p>
+              <input style="display: none" type="file" name="images" (change)="onFileChanged($event)" #fileInput
+                multiple="multiple" accept="image/png, image/gif, image/jpeg">
+              <label class="btn btn-primary mb-3" for="upload_image_background" (click)="fileInput.click()">Choose
+                file(s)</label>
+            </fieldset>
+            <div *ngFor="let file of files">
+              <div class="uploadPics" [ngClass]="{'scanning': submmited}">
+                <img *ngIf="file" [src]="file.url" class="upload_images">
+                <button type="button" class="btn btn-danger btn-sm deletetxt" (click)="delete(file)">Delete</button>
+              </div>
+            </div>
+            <div *ngIf="files.length && !response" class="my-3 text-center">
+              <button type="button" class="btn btn-lg btn-primary" (click)="upload()"
+                [ngClass]="{'button--loading':submmited}"><span>Upload Picture</span></button>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="row" [ngClass]="{'mt-2': response}">
+              <div class="col-12 col-xl-11" *ngIf="submmited">
+                <div class="text-line" *ngFor="let x of [].constructor(8)"></div>
+              </div>
+              <ng-container *ngIf="response">
+                <div class="col-sm-6">
+                  <p class="mb-0 text-secondary">Hospital</p>
+                  <h4 class="mb-6">
+                    <input type="text" class="border-bottom form-control-plaintext" [value]="response['Hospital Name']">
+                  </h4>
                 </div>
-              <div class="row gy-5 gy-lg-0 align-items-lg-center">
-                <div class="col-12 col-lg-6">
-                        <fieldset class="upload_dropZone text-center mb-3 p-4" *ngIf="!files.length" appDrag (files)="filesDropped($event)">
-                            <legend class="visually-hidden">Image uploader</legend>
-                            <svg width="80px" height="80px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M77.312 286.208h503.808v559.104H77.312z" fill="#5FFFBA" /><path d="M133.632 342.016h391.68v335.36H133.632z" fill="#FFFFFF" /><path d="M189.44 621.568h93.184L236.032 537.6zM375.808 453.632l-93.184 167.936h186.88z" fill="#FFD561" /><path d="M637.44 621.568v83.456l337.408-165.376-211.456-432.64-252.928 122.88h110.08l120.32-58.368 127.488 259.584-230.912 113.152z" fill="#5FFFBA" /></svg>
-                            <p class="small my-2">Drag &amp; Drop background image(s) inside dashed region<br><i>or</i></p>
-                            <input style="display: none" type="file" name="images" (change)="onFileChanged($event)"
-                            #fileInput multiple="multiple" accept="image/png, image/gif, image/jpeg">
-                            <label class="btn btn-primary mb-3" for="upload_image_background" (click)="fileInput.click()">Choose file(s)</label>
-                          </fieldset>
-                          <div *ngFor="let file of files">
-                            <div class="uploadPics" [ngClass]="{'scanning': submmited}">
-                                <img *ngIf="file" [src]="file.url" class="upload_images">
-                                <button type="button" class="btn btn-danger btn-sm deletetxt" (click)="delete(file)">Delete</button>
-                            </div>
-                          </div>
-                          <div *ngIf="files.length && !response" class="my-3 text-center">
-                            <button type="button" class="btn btn-lg btn-primary" (click)="upload()"  [ngClass]="{'button--loading':submmited}"><span>Upload Picture</span></button>
-                          </div>
-                          <div *ngIf="response" class="my-3 text-center">
-                            <button type="button" class="btn btn-lg btn-success text-white px-5" (click)="submit()" [ngClass]="{'button--loading':finalsubmmited}"><span>Submit</span></button>
-                          </div>
+                <div class="col-sm-6">
+                  <p class="mb-0 text-secondary">Doctor Name</p>
+                  <h4 class="mb-3">
+                    <input type="text" class="border-bottom form-control-plaintext" [value]="response['Doctor Name']">
+                  </h4>
                 </div>
-                <div class="col-12 col-lg-6">
-                  <div class="row justify-content-xl-end">
-                    <div class="col-12 col-xl-11" [ngClass]="{'d-none': !submmited}">
-                      <div class="text-line" *ngFor="let x of [].constructor(8)"></div>
-                    </div>
-                    <div class="col-12 col-xl-11" *ngIf="response">
-                      <div class="d-flex mb-4">
-                        <div>
-                          <p class="mb-0 text-secondary">Hospital</p>
-                          <h4 class="mb-3">
-                            <input type="text" class="border-bottom form-control-plaintext" [value]="response['Hospital Name']">
-                            </h4>
-                        </div>
-                      </div>
-                      <div class="d-flex mb-4">
-                        <div>
-                          <p class="mb-0 text-secondary">Doctor Name</p>
-                          <h4 class="mb-3">
-                            <input type="text" class="border-bottom form-control-plaintext" [value]="response['Doctor Name']">
-                            </h4>
-                        </div>
-                      </div>
-                      <div class="d-flex mb-4">
-                        <div>
-                          <p class="mb-0 text-secondary">Patient Name</p>
-                          <h4 class="mb-3">
-                            <input type="text" class="border-bottom form-control-plaintext" [value]="response['Patient Name']">
-                            </h4>
-                        </div>
-                      </div>
-                      <div class="d-flex mb-4">
-                        <div>
-                          <p class="mb-0 text-secondary">Network Hospital</p>
-                          <h4 class="mb-3">
-                            <input type="text" class="border-bottom form-control-plaintext" [value]="response['Network Hospital']">
-                          </h4>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-12 col-xl-11" [ngClass]="{'d-none': submmited || response}">
-                      <div class="d-flex mb-4">
-                        <div>
-                          <span class="btn btn-primary bsb-btn-circle pe-none me-4">1</span>
-                        </div>
-                        <div>
-                          <h4 class="mb-3">Upload document</h4>
-                          <p class="mb-0 text-secondary">Get to know your users and their needs better through surveys, interviews, usability testing, and other methods.</p>
-                        </div>
-                      </div>
-                      <div class="d-flex mb-4">
-                        <div>
-                          <span class="btn btn-primary bsb-btn-circle pe-none me-4">2</span>
-                        </div>
-                        <div>
-                          <h4 class="mb-3">Analysis the policy Copy</h4>
-                          <p class="mb-0 text-secondary">This involves creating wireframes, mockups, and prototypes to test out your ideas and get feedback from users.</p>
-                        </div>
-                      </div>
-                      <div class="d-flex">
-                        <div>
-                          <span class="btn btn-primary bsb-btn-circle pe-none me-4">3</span>
-                        </div>
-                        <div>
-                          <h4 class="mb-3">Finalize</h4>
-                          <p class="mb-0 text-secondary">Once your product is launched, it's important to gather feedback from users to learn what they like and dislike about it.</p>
-                        </div>
-                      </div>
-                    </div>
+                <div class="col-sm-6">
+                  <p class="mb-0 text-secondary">Patient Name</p>
+                  <h4 class="mb-6">
+                    <input type="text" class="border-bottom form-control-plaintext" [value]="response['Patient Name']">
+                  </h4>
+                </div>
+                <div class="col-sm-6">
+                  <p class="mb-0 text-secondary">Network Hospital</p>
+                  <h4 class="mb-6">
+                    <input type="text" class="border-bottom form-control-plaintext"
+                      [value]="response['Network Hospital']">
+                  </h4>
+                </div>
+                <div class="col-sm-12 mt-3">
+                  <p class="mb-0 text-secondary">Summary</p>
+                  <h4 class="mb-3">
+                    <textarea class="border-bottom form-control-plaintext" [value]="response['Summary']"
+                      style="height: 200px;"></textarea>
+                  </h4>
+                </div>
+              </ng-container>
+
+              <div class="col-12 col-xl-11" [ngClass]="{'d-none': submmited || response}">
+                <div class="d-flex mb-4">
+                  <div>
+                    <span class="btn btn-primary bsb-btn-circle pe-none me-4">1</span>
+                  </div>
+                  <div>
+                    <h4 class="mb-3">Upload document</h4>
+                    <p class="mb-0 text-secondary">Get to know your users and their needs better through surveys,
+                      interviews, usability testing, and other methods.</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-4">
+                  <div>
+                    <span class="btn btn-primary bsb-btn-circle pe-none me-4">2</span>
+                  </div>
+                  <div>
+                    <h4 class="mb-3">Analysis the policy Copy</h4>
+                    <p class="mb-0 text-secondary">This involves creating wireframes, mockups, and prototypes to test
+                      out your ideas and get feedback from users.</p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <div>
+                    <span class="btn btn-primary bsb-btn-circle pe-none me-4">3</span>
+                  </div>
+                  <div>
+                    <h4 class="mb-3">Finalize</h4>
+                    <p class="mb-0 text-secondary">Once your product is launched, it's important to gather feedback from
+                      users to learn what they like and dislike about it.</p>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-    </div>
+          </div>
+          <div class="col-12 mt-4 text-center" *ngIf="response">
+            <p>
+              <small class="text-muted" style="max-width: 600px; text-align: center; margin: 0 auto 10px">Please review your summary before sumitting the information.</small>
+            </p>
+            <button type="button" class="btn btn-lg btn-success text-white px-5" (click)="submit()"
+              [ngClass]="{'button--loading':finalsubmmited}"><span>Submit</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </ng-template>

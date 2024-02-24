@@ -42,7 +42,7 @@ export class HomeComponent {
     }
     public upload(): void {
         this.submmited = true;
-        this.ImageWithText('extract hospital name and if the hospital belongs to network hospital and return with "Hospital Name" "Patient Name" "Doctor Name" and "Network Hospital" in JSON format from above image');
+        this.ImageWithText('extract information and Summary about the picture as summary and return with "Hospital Name" "Patient Name" "Doctor Name", "Summary" and "Network Hospital" in JSON format from above image');
 
     }
     private async ImageWithText(prompt: string) {
@@ -85,7 +85,7 @@ export class HomeComponent {
             this.finalsubmmited = false;
             this.CF.CloseModal()
             this.CF.SwalSuccess('Thank you, <br/>We will call you back.')
-        }, 1500);
+        }, 1000);
 
     }
 
