@@ -259,13 +259,14 @@
             </ng-container>
             <ng-container *ngIf="showQues">
               <h4>Commonly asked questions</h4>
+              <i class="text-muted">Click on the question below to see the results.</i>
               <ul class="my_questions">
                 <ng-container *ngFor="let res of commonquestions; let i = index">
                   <li (click)="upload(res.question, res)">
                     <span>
-                      {{i + 1}}. {{res.question}}
+                      <b>{{i + 1}}. {{res.question}}</b>
                     </span>
-                    <div class="text-muted" *ngIf="res.answer">
+                    <div class="text-dark mt-2" *ngIf="res.answer">
                       <small>{{res.answer}}</small>
                     </div>
                     <ng-container *ngIf="res.animate">
