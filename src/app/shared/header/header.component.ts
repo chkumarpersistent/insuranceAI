@@ -18,7 +18,7 @@ export class HeaderComponent {
       return "₹ " + value + " Lakhs";
     }
   };
-
+  public healthissue = '1';
   public btnloading: boolean = false;
   public selectedTenure = 10;
   constructor(private CF: CommonService) { }
