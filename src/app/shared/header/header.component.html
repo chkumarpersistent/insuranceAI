@@ -16,43 +16,167 @@
 <ng-template #quotepopup let-c="close()" let-d="dismiss()">
     <div class="modal-header justify-content-center border-0">
         <button type="button" class="close" (click)='c; d;'></button>
-        <h4 class="mb-0 text-primary fw-bold pt-3">Your free quote is just clicks away</h4>
     </div>
     <div class="modal-body">
-        <form action="" autocomplete="off">
-            <div class="form-floating mb-3">
-                <input type="number" class="form-control border-2 border-primary10" id="floatingInputAge"
-                    placeholder="">
-                <label for="floatingInputAge">AGE</label>
-            </div>
-            <div class="mb-3 my_radio">
-                <input type="radio" class="btn-check" name="sex" id="male" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="male">Male</label>
-                <input type="radio" class="btn-check" name="sex" id="female" autocomplete="off">
-                <label class="btn btn-outline-primary" for="female">Female</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control border-2 border-primary10" id="floatingInputHealth"
-                    placeholder="">
-                <label for="floatingInputHealth">Government ID Number</label>
-            </div>
-            <div class="form-floating mb-3">
-                <select class="form-select border-2 border-primary10" id="floatingSelectsmoking" aria-label="smoking">
-                    <option value="1" selected>I don't use tobacco</option>
-                    <option value="2">Yes, I do somking</option>
-                </select>
-                <label for="floatingSelectsmoking">Smoking</label>
-            </div>
-            <div class="form-floating">
-                <select class="form-select border-2 border-primary10" id="floatingSelecthealth" aria-label="health">
-                    <option value="1" selected>My health is excellent</option>
-                    <option value="2">Having some health issues</option>
-                </select>
-                <label for="floatingSelecthealth">Health</label>
-            </div>
-        </form>
+        <ng-container *ngIf="step1; else step2">
+            <h4 class="mb-0 text-primary fw-bold pt-3">Your free quote is just clicks away</h4>
+            <form action="" autocomplete="off">
+                <div class="form-floating mb-3">
+                    <select class="form-select border-2 border-primary10" id="floatingSelectAge" aria-label="age">
+                        <!-- <option value="" disabled selected hidden>Select your Age</option> -->
+                        <option value="18">18 yr</option>
+                        <option value="19">19 yr</option>
+                        <option value="20">20 yr</option>
+                        <option value="21">21 yr</option>
+                        <option value="22">22 yr</option>
+                        <option value="23">23 yr</option>
+                        <option value="24" selected>24 yr</option>
+                        <option value="25">25 yr</option>
+                        <option value="26">26 yr</option>
+                        <option value="27">27 yr</option>
+                        <option value="28">28 yr</option>
+                        <option value="29">29 yr</option>
+                        <option value="30">30 yr</option>
+                        <option value="31">31 yr</option>
+                        <option value="32">32 yr</option>
+                        <option value="33">33 yr</option>
+                        <option value="34">34 yr</option>
+                        <option value="35">35 yr</option>
+                        <option value="36">36 yr</option>
+                        <option value="37">37 yr</option>
+                        <option value="38">38 yr</option>
+                        <option value="39">39 yr</option>
+                        <option value="40">40 yr</option>
+                        <option value="41">41 yr</option>
+                        <option value="42">42 yr</option>
+                        <option value="43">43 yr</option>
+                        <option value="44">44 yr</option>
+                        <option value="45">45 yr</option>
+                        <option value="46">46 yr</option>
+                        <option value="47">47 yr</option>
+                        <option value="48">48 yr</option>
+                        <option value="49">49 yr</option>
+                        <option value="50">50 yr</option>
+                        <option value="51">51 yr</option>
+                        <option value="52">52 yr</option>
+                        <option value="53">53 yr</option>
+                        <option value="54">54 yr</option>
+                        <option value="55">55 yr</option>
+                        <option value="56">56 yr</option>
+                        <option value="57">57 yr</option>
+                        <option value="58">58 yr</option>
+                        <option value="59">59 yr</option>
+                        <option value="60">60 yr</option>
+                        <option value="61">61 yr</option>
+                        <option value="62">62 yr</option>
+                        <option value="63">63 yr</option>
+                        <option value="64">64 yr</option>
+                        <option value="65">65 yr</option>
+                        <option value="66">66 yr</option>
+                        <option value="67">67 yr</option>
+                        <option value="68">68 yr</option>
+                        <option value="69">69 yr</option>
+                        <option value="70">70 yr</option>
+                        <option value="71">71 yr</option>
+                        <option value="72">72 yr</option>
+                        <option value="73">73 yr</option>
+                        <option value="74">74 yr</option>
+                        <option value="75">75 yr</option>
+                        <option value="76">76 yr</option>
+                        <option value="77">77 yr</option>
+                        <option value="78">78 yr</option>
+                        <option value="79">79 yr</option>
+                        <option value="80">80 yr</option>
+                        <option value="81">81 yr</option>
+                        <option value="82">82 yr</option>
+                        <option value="83">83 yr</option>
+                        <option value="84">84 yr</option>
+                        <option value="85">85 yr</option>
+                        <option value="86">86 yr</option>
+                        <option value="87">87 yr</option>
+                        <option value="88">88 yr</option>
+                        <option value="89">89 yr</option>
+                        <option value="90">90 yr</option>
+                        <option value="91">91 yr</option>
+                        <option value="92">92 yr</option>
+                        <option value="93">93 yr</option>
+                        <option value="94">94 yr</option>
+                        <option value="95">95 yr</option>
+                        <option value="96">96 yr</option>
+                        <option value="97">97 yr</option>
+                        <option value="98">98 yr</option>
+                        <option value="99">99 yr</option>
+                        <option value="100">100 yr</option>
+                    </select>
+                    <label for="floatingSelectAge">Age</label>
+                </div>
+                <div class="mb-3 my_radio">
+                    <input type="radio" class="btn-check" name="sex" id="male" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="male">Male</label>
+                    <input type="radio" class="btn-check" name="sex" id="female" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="female">Female</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control border-2 border-primary10" id="floatingInputHealth"
+                        placeholder="">
+                    <label for="floatingInputHealth">Government ID Number</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <select class="form-select border-2 border-primary10" id="floatingSelectsmoking"
+                        aria-label="smoking">
+                        <option value="1" selected>I don't use tobacco</option>
+                        <option value="2">Yes, I do somking</option>
+                    </select>
+                    <label for="floatingSelectsmoking">Smoking</label>
+                </div>
+                <div class="form-floating">
+                    <select class="form-select border-2 border-primary10" id="floatingSelecthealth" aria-label="health">
+                        <option value="1" selected>My health is excellent</option>
+                        <option value="2">Having some health issues</option>
+                    </select>
+                    <label for="floatingSelecthealth">Health</label>
+                </div>
+            </form>
+        </ng-container>
+        <ng-template #step2>
+            <form autocomplete="off">
+                <h3 class="mb-2">Your estimate:</h3>
+                <h1 class="mb-4">
+                    <b>{{((value * 750 / 1) * selectedTenure ) | currency: 'INR':'symbol':'1.0-0'}}<span class="fw-light">/mo</span></b>
+                </h1>
+                <div class="card border-0 bg-secondary bg-opacity-10">
+                    <div class="card-body py-4">
+                        <h5>Coverage Amount:</h5>
+                        <h5 class="fw-light">{{value | currency: 'INR':'symbol':'1.0-0'}} Lakhs</h5>
+                        <ngx-slider [(value)]="value" [options]="options"></ngx-slider>
+                        <h5 class="mt-3 mb-4">Policy length (in years):</h5>
+                        <ul class="my_years">
+                            <li (click)="tenure(10)" [ngClass]="{'active': selectedTenure == 10}">
+                                <span>10</span>
+                            </li>
+                            <li  (click)="tenure(15)" [ngClass]="{'active': selectedTenure == 15}">
+                                <span>15</span>
+                            </li>
+                            <li (click)="tenure(20)" [ngClass]="{'active': selectedTenure == 20}">
+                                <span>20</span>
+                            </li>
+                            <li (click)="tenure(25)" [ngClass]="{'active': selectedTenure == 25}">
+                                <span>25</span>
+                            </li>
+                        </ul>
+                        <p class="notes text-primary text-opacity-75">
+                            This estimate is based on the information you entered. This pricing is not guaranteed and may vary depending on the results of your application.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </ng-template>
+        
     </div>
     <div class="modal-footer text-center border-0">
-        <button type="button" class="btn btn-primary btn-lg w-100 my_btn">SEE YOUR ESTIMATE</button>
+        <button type="button" class="btn btn-primary btn-lg w-100 my_btn" *ngIf="step1;" (click)='step1 = false'>SEE YOUR ESTIMATE</button>
+        
+            <button type="button" class="btn btn-primary btn-lg w-100 my_btn" *ngIf="!step1;" [ngClass]="{'button--loading':btnloading}" (click)='applynow()'><span>APPLY NOW</span></button>
+        
     </div>
 </ng-template>
