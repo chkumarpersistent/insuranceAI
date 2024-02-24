@@ -358,3 +358,29 @@ $border-radius: 2px;
 }
 
 // UPLOAD ENDS
+.my_questions {
+  padding-left: 0px;
+  max-width: 600px;
+
+  li {
+    position: relative;
+    list-style: none;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+
+    // &::before {
+    //   content: "*";
+    //   position: absolute;
+    //   left: -20px;
+    //   top: calc(50% - -5px);
+    //   transform: translateY(-50%);
+    //   font-size: 1.4rem;
+
+    // }
+
+    span {
+      opacity: 1;
+    }
+  }
+}

@@ -10,42 +10,72 @@ const genAI = new GoogleGenerativeAI(API_KEY);
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-    @ViewChild('uploadpopup', { static: false }) uploadpopup: ElementRef | undefined;
+    @ViewChild('claimpopup', { static: false }) claimpopup: ElementRef | undefined;
+    @ViewChild('policypopup', { static: false }) policypopup: ElementRef | undefined;
     public submmited: boolean = false;
     public files: FileHandle[] = [];
     private selectedFiles: any = [];
     public response: any = null;
     public finalsubmmited: boolean = false;
+    public extractText = 'extract information and Summary about the picture as summary and return with "Hospital Name" "Patient Name" "Doctor Name", "Summary" and "Network Hospital" in JSON format from above image';
+    private popuptype: string = '';
+    public commonquestions = [
+        { "question": "What's My Sum insured ?", "answer": null, animate: false },
+        { "question": "List All My Benefits of my Policy ?", "answer": null, animate: false },
+        { "question": "List all the nearest Hospitals in the network ?", "answer": null, animate: false }
+    ]
+    public showQues: boolean = false;
+    public typedQuestion: string = '';
+    public typedAnswer: string = '';
     constructor(
         private CF: CommonService
     ) { }
-    public openmodal(type: string) {
+    public openmodal(key: string) {
         this.response = null;
         this.submmited = false;
         this.finalsubmmited = false;
         this.files = [];
         this.selectedFiles = [];
-        this.CF.OpenPopup(this.uploadpopup, 'My_Popup')
+        this.popuptype = key;
+        switch (key) {
+            case 'claim':
+                this.CF.OpenPopup(this.claimpopup, 'My_Popup')
+                break;
+            default:
+                this.CF.OpenPopup(this.policypopup, 'My_Popup')
+                break;
+        }
     }
     public filesDropped(files: any): void {
         this.files = files;
+        this.showQuestions();
     }
     public onFileChanged(event: any) {
         this.selectedFiles = event.target.files;
         if (this.selectedFiles && Array.from(this.selectedFiles).length > 0) {
             Array.from(this.selectedFiles).forEach((file: any) => this.files.push({ file, url: URL.createObjectURL(file) }));
         }
+        this.showQuestions();
+    }
+    private showQuestions() {
+        this.showQues = (this.popuptype === 'policy')
     }
     public delete(file: any) {
         this.response = null;
         this.files = this.files.filter(x => x !== file);
+        this.showQues = this.files.length !== 0;
+        const qus = this.commonquestions;
+        this.commonquestions = [];
+        setTimeout(() => this.commonquestions = qus, 100);
     }
-    public upload(): void {
+    public upload(txt: string, data?: any): void {
         this.submmited = true;
-        this.ImageWithText('extract information and Summary about the picture as summary and return with "Hospital Name" "Patient Name" "Doctor Name", "Summary" and "Network Hospital" in JSON format from above image');
-
+        this.ImageWithText(txt, data);
     }
-    private async ImageWithText(prompt: string) {
+    private async ImageWithText(prompt: string, data?: any) {
+        if (data && data !== 'typed') {
+            data.animate = true;
+        }
         this.submmited = true;
         // For text-and-images input (multimodal), use the gemini-pro-vision model
         const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
@@ -56,12 +86,14 @@ export class HomeComponent {
             const result = await model.generateContent([prompt, ...imageParts]);
             const response = await result.response;
             const text = response.text();
-
-
             this.response = this.stringfy(text);
-            console.log(this.response)
-            console.log(typeof this.response)
-            // this.content = text;
+            if (data && data !== 'typed') {
+                data.animate = false;
+                data.answer = this.response;
+            }
+            if (data && data == 'typed') {
+                this.typedAnswer = this.response;
+            }
             this.submmited = false;
         } catch (error) {
             this.submmited = false;
@@ -86,15 +118,12 @@ export class HomeComponent {
             this.CF.CloseModal()
             this.CF.SwalSuccess('Thank you, <br/>We will call you back.')
         }, 1000);
-
     }
-
     private stringfy(text: string) {
         try {
             const regexStart = new RegExp('```json', 'g');
             const regexEnd = new RegExp('```', 'g');
             return JSON.parse(text.replace(regexStart, '').replace(regexEnd, ''));
-
         } catch (error) {
             return text
         }
