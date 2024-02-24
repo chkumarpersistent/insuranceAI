@@ -1,7 +1,6 @@
 #services {
     background-color: #f7f5ff;
-    background: url('/assets/left-bg.png') left top no-repeat, 
-                url('/assets/right-bg.png') right top no-repeat;
+    background: url('https://static.pbcdn.in/cdn/images/home-v1/left-bg.png') left top no-repeat, url('https://static.pbcdn.in/cdn/images/home-v1/right-bg.png') right top no-repeat;
     min-height: 510px;
 
     @media screen and (max-width: 600px) {
