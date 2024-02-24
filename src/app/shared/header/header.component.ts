@@ -8,8 +8,10 @@ import { CommonService } from 'src/app/services/commonservice/common-service.ser
 })
 export class HeaderComponent {
   @ViewChild('quotepopup', { static: false }) quotepopup: ElementRef | undefined;
+  public age = 23;
+  public isSmoker:string = 'no';
   public step1: boolean = true;
-  public value: number = 10;
+  public value: number = 5;
   public options: Options = {
     floor: 2,
     ceil: 50,

@@ -22,7 +22,7 @@
             <h4 class="mb-0 text-primary fw-bold pt-3">Your free quote is just clicks away</h4>
             <form action="" autocomplete="off">
                 <div class="form-floating mb-3">
-                    <select class="form-select border-2 border-primary10" id="floatingSelectAge" aria-label="age">
+                    <select class="form-select border-2 border-primary10" id="floatingSelectAge" aria-label="age" [(ngModel)]="age" [ngModelOptions]="{standalone: true}">
                         <!-- <option value="" disabled selected hidden>Select your Age</option> -->
                         <option value="18">18 yr</option>
                         <option value="19">19 yr</option>
@@ -123,9 +123,9 @@
                 </div>
                 <div class="form-floating mb-3">
                     <select class="form-select border-2 border-primary10" id="floatingSelectsmoking"
-                        aria-label="smoking">
-                        <option value="1" selected>I don't use tobacco</option>
-                        <option value="2">Yes, I do somking</option>
+                        aria-label="smoking" [(ngModel)]="isSmoker" [ngModelOptions]="{standalone: true}">
+                        <option value="no" selected>I don't use tobacco</option>
+                        <option value="yes">Yes, I do somking</option>
                     </select>
                     <label for="floatingSelectsmoking">Smoking</label>
                 </div>
@@ -150,7 +150,7 @@
                     <span (click)="step1 = true" class="backbtn">&#x2190; </span>
                      Your estimate:</h3>
                 <h1 class="mb-4">
-                    <b>{{((value * 750 / 1) * selectedTenure ) | currency: 'INR':'symbol':'1.0-0'}}<span class="fw-light">/mo</span></b>
+                    <b>{{((value * 750 / 1) * (selectedTenure/10) * (age/100) *(isSmoker == 'yes'? 1.5: 1) *(healthissue == '1'? 1: 1.2) ) | currency: 'INR':'symbol':'1.0-0'}}<span class="fw-light">/mo</span></b>
                 </h1>
                 <div class="card border-0 bg-secondary bg-opacity-10">
                     <div class="card-body py-4">
