@@ -72,6 +72,8 @@ export class HomeComponent {
         this.resetQus();
     }
     private resetQus() {
+        this.typedQuestion = '';
+        this.typedAnswer = '';
         this.commonquestions = JSON.parse(JSON.stringify(rawcommonquestions));
     }
     public upload(txt: string, data?: any): void {

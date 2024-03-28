@@ -280,7 +280,7 @@
               <div class="text-muted mt-2" *ngIf="typedAnswer">
                 <small>{{typedAnswer}}</small>
               </div>
-              <div class="mt-4" (click)="upload(typedQuestion, 'typed')">
+              <div class="mt-4" (click)="upload(typedQuestion, 'typed')" style="cursor: pointer;">
                 <button type="button" class="btn btn-primary"
                   [ngClass]="{'button--loading':submmited && typedQuestion.length > 5, 'disabled': (typedQuestion.length < 5)}"><span>Get
                     the results</span></button>
